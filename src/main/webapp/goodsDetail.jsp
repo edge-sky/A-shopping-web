@@ -17,22 +17,32 @@
     <title><%=digitalGoods.getName()%>
     </title>
     <style>
+        .info-box {
+            width: calc(65vw);
+            margin: auto;
+        }
         .adv-box {
+            width: calc(65vw);
+            margin: auto;
+        }
+        .img-box {
+            /* flex布局，纵向排布 */
             display: flex;
-            flex-direction: row;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
         }
         .img {
-            align-items: center;
+
         }
     </style>
 </head>
 
 <body>
 <div>
-    <table width="974" height="442" border="0">
+    <table class="info-box">
         <tr>
-            <td colspan="2" rowspan="4"><img src=<%=imgPath%> width="348" height="464" alt=""/></td>
+            <td colspan="2" rowspan="4"><img src=<%=imgPath%>  alt="" style="max-height: 100%; max-width: 100%; height: auto; width: auto"/></td>
             <td height="138" colspan="2">
                 <div align="center">
                     <h1><%=digitalGoods.getName()%>
@@ -71,7 +81,9 @@
     <%for (int i = 0; i < digitalGoods.getAdv().size(); i++) {
         String str = "img/advises/" + digitalGoods.getAdv().get(i);
     %>
-    <img src=<%=str%> alt=<%=digitalGoods.getAdv().get(i)%> class="img">
+    <div class="img-box">
+        <img src=<%=str%> alt="商品详情" class="img" >
+    </div>
     <%}%>
 </div>
 </body>
