@@ -22,6 +22,9 @@
             flex-direction: row;
             align-items: center;
         }
+        .img {
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -65,9 +68,10 @@
     <p>&nbsp;</p>
 </div>
 <div class="adv-box" >
-    <%for (int i = 0; i < digitalGoods.getAdv().size(); i++) {%>
-    <%%>
-    <img src="img/adv" + <%=digitalGoods.getAdv().get(i)%> alt=<%=digitalGoods.getAdv().get(i)%> width="400px" height="500px">
+    <%for (int i = 0; i < digitalGoods.getAdv().size(); i++) {
+        String str = "img/advises/" + digitalGoods.getAdv().get(i);
+    %>
+    <img src=<%=str%> alt=<%=digitalGoods.getAdv().get(i)%> class="img">
     <%}%>
 </div>
 </body>
