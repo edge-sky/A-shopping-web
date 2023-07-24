@@ -27,6 +27,8 @@
         }
 
         .info-box {
+            display: flex;
+            flex-direction: row;
             width: calc(65vw);
             margin: auto;
             padding-top: 8%;
@@ -81,8 +83,9 @@
     </div>
     <div class="info-box">
         <tr>
-            <td><img src="img/brandLogo"<%=digitalGoods.getBrandLogo()%> alt="品牌图标"></td>
-            <td><%=digitalGoods.getBrandSummary()%></td>
+            <%String brandLoge = "img/brandLogo/" + digitalGoods.getBrandLogo();%>
+            <div style="width: 20%;object-fit: contain;"><img src=<%=brandLoge%> alt="品牌图标"; style="max-width: 100%"></div>
+            <div style="width: 80%"><%=digitalGoods.getBrandSummary()%></div>
         </tr>
         <p>&nbsp;</p>
     </div>

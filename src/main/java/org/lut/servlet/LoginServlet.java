@@ -26,7 +26,6 @@ public class LoginServlet extends HttpServlet {
                 System.out.println("登录成功");
                 request.setAttribute("user", UserDao.getDao().getUser(phoneNum));
                 request.getRequestDispatcher("main.jsp").forward(request, response);
-//                response.sendRedirect("main.jsp");
             } else {
                 System.out.println("登录失败");
                 response.setContentType("text/html; charset=UTF-8");
