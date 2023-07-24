@@ -34,12 +34,26 @@
             aspect-ratio: 3 / 4;
             border: 1px solid black;
             position: relative;
-            /*overflow: auto;*/
+            background-color: white;
         }
         .img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+            height: 85%;
+            width: 100%;
+        }
+        .font {
+            color: #656565;
+            text-decoration: none;
+        }
+        .font:hover {
+            color: #f50010;
+            text-decoration: none;
+        }
+        .a:link {
+            color: #656565;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -69,10 +83,12 @@
             String url = "detail?id=" + digitalGoods.getId();
     %>
     <div class="goods-layout">
-        <a href="<%=url%>">
+        <a href="<%=url%>" class="font">
             <img src=<%=logoSrc%> alt=<%=digitalGoods.getLogo()%>
                  class="img" />
-            <%=digitalGoods.getName()%>
+            <p>
+                <%=digitalGoods.getDescription()%>
+            </p>
         </a>
     </div>
     <%}%>
