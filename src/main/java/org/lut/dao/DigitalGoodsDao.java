@@ -83,6 +83,8 @@ public class DigitalGoodsDao {
             goods.setType(rs.getString("type"));
             goods.setBrand(rs.getString("brand"));
             goods.setLogo(rs.getString("logo"));
+            goods.setBrandLogo(rs.getString("brand_logo"));
+            goods.setBrandSummary(rs.getString("brand_summary"));
 
             String[] str = rs.getString("adv").split(",");
             adv = new ArrayList<>(Arrays.asList(str));// 将分割后的广告路径插入集合中

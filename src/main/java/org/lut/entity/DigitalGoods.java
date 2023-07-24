@@ -13,6 +13,24 @@ public class DigitalGoods {
     private String brand;// 品牌
     private String logo;// 商品图片路径
     private ArrayList<String> adv;// 广告图片路径
+    private String brandLogo;// 品牌Logo
+    private String brandSummary;
+
+    public String getBrandLogo() {
+        return brandLogo;
+    }
+
+    public void setBrandLogo(String brandLogo) {
+        this.brandLogo = brandLogo;
+    }
+
+    public String getBrandSummary() {
+        return brandSummary;
+    }
+
+    public void setBrandSummary(String brandSummary) {
+        this.brandSummary = brandSummary;
+    }
 
     public String getId() {
         return id;

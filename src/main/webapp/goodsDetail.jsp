@@ -29,6 +29,8 @@
         .info-box {
             width: calc(65vw);
             margin: auto;
+            padding-top: 8%;
+            padding-bottom: 5%;
         }
 
         .adv-box {
@@ -79,14 +81,9 @@
     </div>
     <div class="info-box">
         <tr>
-            <td width="141">参数介绍</td>
-            <td width="823">&nbsp;</td>
+            <td><img src="img/brandLogo"<%=digitalGoods.getBrandLogo()%> alt="品牌图标"></td>
+            <td><%=digitalGoods.getBrandSummary()%></td>
         </tr>
-        <tr>
-            <td>品牌介绍</td>
-            <td>&nbsp;</td>
-        </tr>
-        </table>
         <p>&nbsp;</p>
     </div>
     <div class="adv-box">
