@@ -48,10 +48,6 @@
             justify-content: center;
             width: 100%;
         }
-
-        .img {
-
-        }
     </style>
 </head>
 
@@ -65,18 +61,23 @@
             <img src=<%=imgPath%>  alt=""
                  style="max-width: 100%; height: auto; width: auto"/>
         </div>
-        <div style="width: 50%; margin-top: 35%; padding-left: 5%">
-            <table style="width: 50%; white-space: nowrap">
+        <div style="width: 50%; padding-left: 5%;">
+            <div style="color: #515151">
+                <h2>
+                    <%=digitalGoods.getDescription()%>
+                </h2>
+            </div>
+            <table style="width: 50%; margin-top: 26%;">
                 <tr>
-                    <td colspan="2"><%=digitalGoods.getDescription()%></td>
+                    <td style="width: 40%; color: #515151"><h3>品牌：</h3></td>
+                    <td style="max-width: 60%;"><h3><%=digitalGoods.getBrand()%>
+                    </h3></td>
                 </tr>
                 <tr>
-                    <td style="width: 40%"><h2>品牌：</h2></td>
-                    <td style="width: 60%"><h3><%=digitalGoods.getBrand()%></h3></td>
-                </tr>
-                <tr>
-                    <td><h2>价格：</h2></td>
-                    <td style="color: #e62928">￥<%=digitalGoods.getPrice()%></td>
+                    <td style="color: #515151"><h3>价格：</h3></td>
+                    <td style="color: #e62928"><h1>￥<%=digitalGoods.getPrice()%>
+                    </h1>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -84,8 +85,10 @@
     <div class="info-box">
         <tr>
             <%String brandLoge = "img/brandLogo/" + digitalGoods.getBrandLogo();%>
-            <div style="width: 20%;object-fit: contain;"><img src=<%=brandLoge%> alt="品牌图标"; style="max-width: 100%"></div>
-            <div style="width: 80%"><%=digitalGoods.getBrandSummary()%></div>
+            <div style="width: 20%;object-fit: contain;"><img src=<%=brandLoge%> alt="品牌图标";
+                                                              style="max-width: 100%"></div>
+            <div style="width: 80%"><%=digitalGoods.getBrandSummary()%>
+            </div>
         </tr>
         <p>&nbsp;</p>
     </div>
