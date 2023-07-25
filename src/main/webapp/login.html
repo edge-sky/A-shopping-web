@@ -41,7 +41,7 @@
         .login-button {
             text-align: center;
             padding: 10px;
-            width: 55%;
+            width: 58%;
             margin-top: 10px;
             background-color: #056de8;
             color: white;
@@ -50,10 +50,12 @@
         .login-button:hover {
             background-color: #0461cf;
         }
+
         .login-toRegister {
             background-color: transparent;
             border: 0;
         }
+
         .login-toRegister:hover {
             color: blue;
             text-decoration-line: underline;
@@ -78,9 +80,11 @@
         </div>
         <div class="login-code">
             <label>
-                <input type="button" id="code" name="code" onclick="creatCode()" style="width:20%; height: 35px; border: 0; background-color: rgba(255, 255, 255, 0.45); letter-spacing: 4px; font-size: 20px;)"
+                <input type="button" id="code" name="code" onclick="creatCode()"
+                       style="width:20%; height: 35px; border: 0; background-color: rgba(255, 255, 255, 0.45); letter-spacing: 4px; font-size: 20px;)"
                        title="看不清？换一张">
-                <input type="text" id="inCode" name="inCode" placeholder="请输入验证码" style="width: 35%; height: 30px">
+                <input type="text" id="inCode" name="inCode" placeholder="请输入验证码"
+                       style="width: 35%; height: 30px">
             </label>
         </div>
         <div>
@@ -90,14 +94,19 @@
         </div>
         <div>
             <label>
-                <input type="button" name="register" value="还没有账户？点我注册" onclick="shiftToRegister()" class="login-toRegister">
+                <input type="button" name="register" value="还没有账户？点我注册" onclick="shiftToRegister()"
+                       class="login-toRegister">
+            </label>
+            <label>
+                <input type="button" name="register" value="忘记密码?" onclick="shiftToRegister()"
+                       class="login-toRegister" style="padding-left: 10%">
             </label>
         </div>
     </form>
 </div>
 <script>
     function shiftToRegister() {
-        window.location.href="register.html";
+        window.location.href = "register.html";
     }
 
 
@@ -130,6 +139,7 @@
         }
         document.getElementById("code").value = code;
     }
+
     function checkCode() {
         if (document.getElementById("inCode").value.toLowerCase() !== code.toLowerCase()) {
             alert("验证码错误")

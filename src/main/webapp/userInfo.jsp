@@ -83,7 +83,7 @@
             </label>
         </div>
         <div>
-            性别：<%=user.getEmail()%>
+            性别：<%=user.getGender()%>
         </div>
     </div>
     <div>
@@ -93,7 +93,7 @@
         <input type="button" name="back" value="返回" onclick="history.back();" class="button">
     </div>
     <div>
-        <input type="button" name="back" value="注销" onclick="window.location.href='login.html'" class="button">
+        <input type="button" name="back" value="退出登录" onclick="window.location.href='main.jsp'" class="button">
     </div>
 </div>
 <div style="position: fixed;top: 0;left:0;bottom: 0;right: 0;z-index: -1">
