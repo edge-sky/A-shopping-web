@@ -24,9 +24,8 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String gender = request.getParameter("gender");
         String password = request.getParameter("password");
-        String confirm = request.getParameter("confirm");
 
-        System.out.println(userName + email + phoneNum + gender + password + confirm);
+        System.out.println(userName + email + phoneNum + gender + password);
 
         try {
             if (UserDao.getDao().findIfInBD(userName, phoneNum, email)) {
@@ -46,7 +45,7 @@ public class RegisterServlet extends HttpServlet {
         user.setGender(gender);
         user.setPassword(password);
 
-        int result = -1;
+        int result;
         try {
             result = UserDao.getDao().addUser(user);
         } catch (SQLException e) {

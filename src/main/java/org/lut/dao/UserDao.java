@@ -26,7 +26,7 @@ public class UserDao {
         return dao;
     }
 
-    // 增
+    // 注册账号
     public int addUser(User user) throws SQLException {
         // 链接数据库
         Connection con = JDBCUtil.connect();
@@ -106,5 +106,25 @@ public class UserDao {
         JDBCUtil.close();
 
         return user;
+    }
+
+    // 修改用户密码
+    public int modfiy(String phoneNum, String name, String email, String password) throws SQLException {
+        Connection con = JDBCUtil.connect();
+
+        String sql = "update user_info set password='"+ password +"' where phone_number='"+ phoneNum +"' and user_name='"+ name +"' and email='"+ email +"'";
+        con.createStatement().executeUpdate(sql);
+
+        String sqlFindPassword = "select password from user_info where phone_number='"+ phoneNum +"'";
+        ResultSet rs = con.createStatement().executeQuery(sqlFindPassword);
+        rs.next();
+        if (rs.getString("password").equals(password)) {
+            return 1;
+        }
+
+        // 关闭数据库
+        JDBCUtil.close();
+
+        return 0;
     }
 }

@@ -53,6 +53,7 @@
 
         .login-toRegister {
             background-color: transparent;
+            color: #656565;
             border: 0;
         }
 
@@ -94,22 +95,17 @@
         </div>
         <div>
             <label>
-                <input type="button" name="register" value="还没有账户？点我注册" onclick="shiftToRegister()"
+                <input type="button" name="register" value="还没有账户？点我注册" onclick="window.location.href = 'register.html'"
                        class="login-toRegister">
             </label>
             <label>
-                <input type="button" name="register" value="忘记密码?" onclick="shiftToRegister()"
+                <input type="button" name="register" value="忘记密码?" onclick="window.location.href = 'findAccount.html'"
                        class="login-toRegister" style="padding-left: 10%">
             </label>
         </div>
     </form>
 </div>
 <script>
-    function shiftToRegister() {
-        window.location.href = "register.html";
-    }
-
-
     let code = "";
     let flag = 0;// 验证码框是否处于焦点
 

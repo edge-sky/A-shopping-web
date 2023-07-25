@@ -88,7 +88,7 @@
     int flag = 0;
     if (request.getAttribute("user") == null) {
         user = new User();
-        user.setUserName("未登录");
+        user.setUserName("点我登录");
     } else {
         user = (User) request.getAttribute("user");
         flag = 1;
