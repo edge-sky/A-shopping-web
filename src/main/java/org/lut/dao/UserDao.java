@@ -1,6 +1,5 @@
 package org.lut.dao;
 
-import org.lut.entity.DigitalGoods;
 import org.lut.entity.User;
 import org.lut.util.JDBCUtil;
 
@@ -53,7 +52,7 @@ public class UserDao {
     }
 
     // 在数据库中寻找是否相同的姓名、电话、邮箱
-    public boolean findIfInBD(String name, String phoneNum, String email) throws SQLException {
+    public boolean findIfInDB(String name, String phoneNum, String email) throws SQLException {
         Connection con = JDBCUtil.connect();
         String sql = "select user_name, phone_number, email from user_info";
 

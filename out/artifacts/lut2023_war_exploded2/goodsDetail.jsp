@@ -90,7 +90,6 @@
             <div style="width: 80%"><%=digitalGoods.getBrandSummary()%>
             </div>
         </tr>
-        <p>&nbsp;</p>
     </div>
     <div class="adv-box">
         <%

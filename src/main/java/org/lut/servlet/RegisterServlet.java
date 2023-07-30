@@ -3,7 +3,6 @@ package org.lut.servlet;
 import org.lut.dao.UserDao;
 import org.lut.entity.User;
 
-import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
@@ -12,12 +11,12 @@ import java.sql.SQLException;
 @WebServlet(name = "RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         request.setCharacterEncoding("UTF-8");
         String userName = request.getParameter("userName");
         String phoneNum = request.getParameter("phoneNum");
@@ -28,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
         System.out.println(userName + email + phoneNum + gender + password);
 
         try {
-            if (UserDao.getDao().findIfInBD(userName, phoneNum, email)) {
+            if (UserDao.getDao().findIfInDB(userName, phoneNum, email)) {
                 System.out.println("已注册");
                 response.setContentType("text/html; charset=UTF-8");
                 response.getWriter().print("<script>alert('姓名、手机号或邮箱已注册')</script>;window.location.href='register.html'</script>");
